@@ -1,7 +1,6 @@
 {
   "name": "mernshoppinglist",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -18,5 +17,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PluggFriends/mernShoppinglist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PluggFriends/mernShoppinglist/issues"
+  },
+  "homepage": "https://github.com/PluggFriends/mernShoppinglist#readme",
+  "description": ""
 }
