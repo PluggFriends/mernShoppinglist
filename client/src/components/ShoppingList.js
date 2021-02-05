@@ -7,9 +7,9 @@ class ShoppingList extends Component {
   state = {
     items: [
       { id: uuidv4(), name: 'Eggs' },
-      { id: uuidv4(), name: 'Eggs' },
-      { id: uuidv4(), name: 'Eggs' }, //powershell
-      { id: uuidv4(), name: 'Eggs' }, //WSL LINUX
+      { id: uuidv4(), name: 'Milk' },
+      { id: uuidv4(), name: 'Bread' }, //powershell
+      { id: uuidv4(), name: 'House' }, //WSL LINUX
     ],
   };
   render() {
@@ -17,8 +17,8 @@ class ShoppingList extends Component {
     return (
       <Container>
         <Button
+          className="addItem-btn"
           color="dark"
-          style={{ marginBottom: '2rem' }}
           onClick={() => {
             const name = prompt('Enter Item');
             if (name) {
@@ -30,6 +30,29 @@ class ShoppingList extends Component {
         >
           Add Item
         </Button>
+        <ListGroup>
+          <TransitionGroup className="shopping-list">
+            {items.map(({ id, name }) => (
+              <CSSTransition key={id} timeout={500}>
+                <ListGroupItem>
+                  <Button
+                    className="removeItem-btn"
+                    color="danger"
+                    size="small"
+                    onClick={() => {
+                      this.setState((state) => ({
+                        items: state.items.filter((item) => item.id !== id),
+                      }));
+                    }}
+                  >
+                    &times;
+                  </Button>
+                  {name}
+                </ListGroupItem>
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
+        </ListGroup>
       </Container>
     );
   }
