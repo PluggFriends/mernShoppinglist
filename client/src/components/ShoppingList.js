@@ -9,7 +9,7 @@ class ShoppingList extends Component {
       { id: uuidv4(), name: 'Eggs' },
       { id: uuidv4(), name: 'Eggs' },
       { id: uuidv4(), name: 'Eggs' },
-      { id: uuidv4(), name: 'Eggs' },
+      { id: uuidv4(), name: 'Eggs' }, //WSL LINUX
     ],
   };
   render() {
