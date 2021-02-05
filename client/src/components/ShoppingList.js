@@ -8,7 +8,7 @@ class ShoppingList extends Component {
     items: [
       { id: uuidv4(), name: 'Eggs' },
       { id: uuidv4(), name: 'Eggs' },
-      { id: uuidv4(), name: 'Eggs' },
+      { id: uuidv4(), name: 'Eggs' }, //powershell
       { id: uuidv4(), name: 'Eggs' }, //WSL LINUX
     ],
   };
