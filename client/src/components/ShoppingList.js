@@ -1,6 +1,38 @@
-import React from 'react';
-import { Container, ListGroup, ListGroupItem, Button } from 'react-strap';
+import React, { Component } from 'react';
+import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
-(item) => item.id !== id;
+class ShoppingList extends Component {
+  state = {
+    items: [
+      { id: uuidv4(), name: 'Eggs' },
+      { id: uuidv4(), name: 'Eggs' },
+      { id: uuidv4(), name: 'Eggs' },
+      { id: uuidv4(), name: 'Eggs' },
+    ],
+  };
+  render() {
+    const { items } = this.state;
+    return (
+      <Container>
+        <Button
+          color="dark"
+          style={{ marginBottom: '2rem' }}
+          onClick={() => {
+            const name = prompt('Enter Item');
+            if (name) {
+              this.setState((state) => ({
+                items: [...state.items, { id: uuidv4(), name }],
+              }));
+            }
+          }}
+        >
+          Add Item
+        </Button>
+      </Container>
+    );
+  }
+}
+
+export default ShoppingList;
