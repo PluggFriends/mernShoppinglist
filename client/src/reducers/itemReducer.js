@@ -1,12 +1,14 @@
-import { v4 as uuidv4 } from 'uuid';
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from '../actions/types';
+//import { v4 as uuidv4 } from 'uuid'; used when testing items before connecting backend
+import {
+	GET_ITEMS,
+	ADD_ITEM,
+	DELETE_ITEM,
+	ITEMS_LOADING,
+} from '../actions/types';
+
 const initialState = {
-	items: [
-		{ id: uuidv4(), name: 'Eggs' },
-		{ id: uuidv4(), name: 'Milk' },
-		{ id: uuidv4(), name: 'Bread' },
-		{ id: uuidv4(), name: 'House' },
-	],
+	items: [],
+	loading: false,
 };
 //run test on type with action.type. gonna return
 export default function (state = initialState, action) {
@@ -14,6 +16,8 @@ export default function (state = initialState, action) {
 		case GET_ITEMS:
 			return {
 				...state,
+				items: action.payload,
+				loading: false,
 			};
 		case DELETE_ITEM:
 			return {
@@ -24,6 +28,11 @@ export default function (state = initialState, action) {
 			return {
 				...state,
 				items: [action.payload, ...state.items],
+			};
+		case ITEMS_LOADING:
+			return {
+				...state,
+				loading: true,
 			};
 		default:
 			return state;

@@ -14,7 +14,7 @@ import {
 
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
-import { v4 as uuidv4 } from 'uuid';
+//import { v4 as uuidv4 } from 'uuid'; only used when testing state in component for adding items before we connect the front end to the backend.
 
 class ItemModal extends Component {
 	state = {
@@ -35,7 +35,6 @@ class ItemModal extends Component {
 		e.preventDefault();
 
 		const newItem = {
-			id: uuidv4(),
 			name: this.state.name,
 		};
 		//add item via addItem action
