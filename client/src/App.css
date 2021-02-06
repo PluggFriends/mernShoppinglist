@@ -1,26 +1,30 @@
 .removeItem-btn {
-  margin-right: 0.5rem;
+	margin-right: 0.5rem;
 }
 
 .addItem-btn {
-  display: inline-block;
-  margin: 2rem 0;
+	display: inline-block;
+	margin: 2rem 0;
 }
 
 .fade-enter {
-  opacity: 0.01;
+	opacity: 0.01;
 }
 
 .fade-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
+	opacity: 1;
+	transition: opacity 1000ms ease-in;
 }
 
 .fade-exit {
-  opacity: 1;
+	opacity: 1;
 }
 
 .fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 1000ms ease-in;
+	opacity: 0.01;
+	transition: opacity 1000ms ease-in;
+}
+
+.modalAddItem-btn {
+	margin-top: 2rem;
 }
